@@ -53,6 +53,12 @@ The next file should be named `botdetect.xml` and be added in
 </botdetect>
 ```
 
-We display the captcha by visiting next url
+We turn on the service by executing
+
+```bash
+$ docker-compose up
+```
+
+We can view the captcha by visiting next url
 
 http://localhost:8080/botdetect-captcha-lib/simple-botdetect.php?get=html&c=yourFirstCaptchaStyle
