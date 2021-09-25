@@ -7,13 +7,13 @@ services:
       - php
     ports:
       - "80:80"
-      - "443:443"
+      # - "443:443"
     volumes:
       - ./code:/code
       - ./site.conf:/etc/nginx/conf.d/default.conf
-      - ./dhparam:/etc/nginx/dhparam
-      - ./certbot/conf/:/etc/nginx/ssl/
-      - ./certbot/data:/usr/share/nginx/html/letsencrypt
+      # - ./dhparam:/etc/nginx/dhparam
+      # - ./certbot/conf/:/etc/nginx/ssl/
+      # - ./certbot/data:/usr/share/nginx/html/letsencrypt
   php:
     build:
       context: ./php-container
@@ -21,10 +21,10 @@ services:
     volumes:
       - ./code:/code
 
-  certbot:
-    image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email jesushfloresn@gmail.com --agree-tos --no-eff-email -d materiales-hernandez.com
-    volumes:
-      - ./certbot/conf/:/etc/letsencrypt
-      - ./certbot/logs/:/var/log/letsencrypt
-      - ./certbot/data:/usr/share/nginx/html/letsencrypt
+  # certbot:
+  #   image: certbot/certbot:latest
+  #   command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email jesushfloresn@gmail.com --agree-tos --no-eff-email -d materiales-hernandez.com
+  #   volumes:
+  #     - ./certbot/conf/:/etc/letsencrypt
+  #     - ./certbot/logs/:/var/log/letsencrypt
+  #     - ./certbot/data:/usr/share/nginx/html/letsencrypt

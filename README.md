@@ -1,4 +1,4 @@
-# docker-compose for run nginx and php containers
+# Environment for running php applications with nginx using docker containers
 
 ## To run
 
@@ -31,7 +31,7 @@ Then we unzip all the content in the `code` folder
 
 https://captcha.com/react-captcha.html#h-plain-php-backend
 
-The next file should be named `botdetect.xml` and be added in
+The next file should be named `botdetect.xml` and created in the following path
 
 `/botdetect-captcha-lib/config/`
 
